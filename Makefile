@@ -1,11 +1,12 @@
 CLFAGS =-g -Wall -Werror
 CC=gcc
-.PHONY: all clean
+.PHONY: clean
 
-all: main
+run: build
+	./tto
 
-main: main.c fun.h fun.c
-	$(CC) $(CFLAGS) fun.c main.c -o main
+build: main.c fun.h fun.c
+	$(CC) $(CFLAGS) fun.c main.c -o tto
 
 clean:
 	-rm -f main
